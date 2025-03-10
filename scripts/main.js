@@ -117,20 +117,12 @@ contactForm.addEventListener('submit', async (e) => {
         const response = await fetch(API_URL, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'Content-Type': 'application/json'
             },
-            credentials: 'include',
-            mode: 'cors',
             body: JSON.stringify(formData)
         });
 
         console.log('Response received:', response);
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
         const data = await response.json();
         console.log('Response data:', data);
 
@@ -142,7 +134,7 @@ contactForm.addEventListener('submit', async (e) => {
         }
     } catch (error) {
         console.error('Detailed error:', error);
-        alert('Failed to send message. Please try again later. Error: ' + error.message);
+        alert(error.message || 'Failed to send message. Please try again later.');
     } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = 'Send Message';

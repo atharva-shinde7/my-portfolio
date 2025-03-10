@@ -8,10 +8,8 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://atharva-portfolio.netlify.app', 'https://localhost:5500', 'http://localhost:5500', 'http://127.0.0.1:5500'],
-    methods: ['POST', 'OPTIONS'],
-    credentials: true,
-    allowedHeaders: ['Content-Type', 'Authorization']
+    origin: '*', // Allow all origins
+    methods: ['POST']
 }));
 
 // Email configuration
