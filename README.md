@@ -66,4 +66,4 @@ Feel free to reach out through the contact form on my website or connect with me
 
 ---
 
-© 2024 Atharva Shinde. All Rights Reserved. 
+© 2025 Atharva Shinde. All Rights Reserved. 
