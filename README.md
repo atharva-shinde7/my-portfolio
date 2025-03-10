@@ -1,7 +1,7 @@
 # 🌌 Atharva Shinde | Quantum Thinker & AI Innovator
 
 <div align="center">
-  <img src="assets/atom.jpg" alt="Quantum Logo" width="150" style="border-radius: 50%;" />
+  <img src="assets/atom.ico" alt="Quantum Logo" width="150" style="border-radius: 50%;" />
   <br>
   <em>Where Quantum Computing meets Artificial Intelligence</em>
 </div>
