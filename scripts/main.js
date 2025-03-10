@@ -89,10 +89,11 @@ cursorSpan.classList.add('typing');
 const contactForm = document.querySelector('.contact-form');
 const submitBtn = contactForm.querySelector('.submit-btn');
 
-// API URL based on environment
+// API URL - Replace RENDER_URL with your actual Render.com URL
+const RENDER_URL = 'https://my-portfolio-l0ge.onrender.com'; // Replace this with your actual Render URL
 const API_URL = window.location.hostname === 'localhost'
     ? 'http://localhost:3000/api/contact'
-    : 'https://your-render-service-url.onrender.com/api/contact'; // You'll replace this with your actual Render URL
+    : `${RENDER_URL}/api/contact`;
 
 // Contact form submission
 contactForm.addEventListener('submit', async (e) => {
@@ -116,12 +117,20 @@ contactForm.addEventListener('submit', async (e) => {
         const response = await fetch(API_URL, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
+            credentials: 'include',
+            mode: 'cors',
             body: JSON.stringify(formData)
         });
 
         console.log('Response received:', response);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
         const data = await response.json();
         console.log('Response data:', data);
 
@@ -133,7 +142,7 @@ contactForm.addEventListener('submit', async (e) => {
         }
     } catch (error) {
         console.error('Detailed error:', error);
-        alert(error.message || 'Failed to send message. Please try again later.');
+        alert('Failed to send message. Please try again later. Error: ' + error.message);
     } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = 'Send Message';
