@@ -95,7 +95,7 @@ class JarvisChat {
         messageDiv.classList.add('message', sender);
         messageDiv.innerHTML = `
             <div class="message-content">
-                <span class="sender">${sender === 'jarvis' ? 'Jarvis' : 'You'}</span>
+                <span class="sender">${sender === 'jarvis' ? 'AI' : 'You'}</span>
                 <p>${text}</p>
             </div>
         `;
