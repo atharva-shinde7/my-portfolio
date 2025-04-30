@@ -63,7 +63,7 @@ class JarvisChat {
 
         // Add welcome message
         setTimeout(() => {
-            this.addMessage("Hello! I'm Jarvis, Atharva's AI assistant. How can I help you?", 'jarvis');
+            this.addMessage("Hello! I'm Atharva's AI assistant. How can I help you?", 'jarvis');
         }, 500);
     }
 
